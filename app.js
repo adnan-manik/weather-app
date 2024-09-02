@@ -33,7 +33,8 @@ async function getWeatherData(city) {
     const response = await fetch(apiUrl);
 
     if (!response.ok) {
-        throw new error("Couldn't fetch weather data");
+        throw new error(response.cod);
+        
     }
     else {
         return await response.json();
@@ -50,31 +51,27 @@ function displayWeatherData(data) {
     const humidityTag = document.getElementById('humidity');
     const pressureTag = document.getElementById('pressure');
 
-//mapping data
+    //mapping data
 
     const { name: city,
-            main: { temp, humidity, pressure },
-            weather: [{ description, id, icon }],
-            sys: {country} }= data;
+        main: { temp, humidity, pressure },
+        weather: [{ description, id, icon }],
+        sys: { country } } = data;
 
 
-//styling 
+    //styling
 
-    notFoundCard.classList.remove('fade-In');
-    foundCard.classList.add('fade-In');
     location.textContent = `${city}, ${country}`;
-    temperature.textContent = (temp-273.15).toFixed(2);
+    temperature.textContent = (temp - 273.15).toFixed(0);
     weatherIcon.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
     desc.textContent = description;
-    humidityTag.textContent = humidity;
-    pressureTag.textContent = pressure;
-
-    console.log(data);
-
+    humidityTag.textContent = humidity+'%';
+    pressureTag.textContent = pressure+'hPa';
+    notFoundCard.classList.remove('fade-In');
+    foundCard.classList.add('fade-In');
 }
 
 function displayError(error) {
-    
     foundCard.classList.remove('fade-In');
     notFoundCard.classList.add('fade-In');
     console.log(error);
