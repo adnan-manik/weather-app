@@ -80,11 +80,11 @@ body{
 }
 .notFound p {
     font-size: 28px;
-    margin: 5%;
+    margin: 15%;
 }
 
 .notFound img{
-    width: 60%;
+    width: 90%;
 }
 
 .weatherBox{
@@ -116,7 +116,7 @@ body{
 
 .weatherBox img{
     width: 60%;
-    margin: 50px;
+    margin: 40px;
     align-self: center;
 }
 
@@ -130,7 +130,8 @@ body{
     opacity: 0; */
 }
 
-.fade-in {
+.fade-In {
+    display: block;
     animation: 0.5s fadeIn forwards;
     animation-delay: 0.5s;
 }
