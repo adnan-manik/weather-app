@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Now</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="searchBox">
+            <label for="searchbar"><i class="fa-solid fa-location-dot"></i></label>
+            <input id="searchbar" type="text" placeholder="Search for a place">
+            <button id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="notFound">
+            <p>Oopps...Invalid location</p>
+            <img src="locNotFound.webp">
+        </div>
+        <div class="found">
+            <div class="weatherBox">
+                <h1 id="location">location</h1>
+                <img src="notFound.png" alt="">
+                <p id="temperature">11</p>
+                <p id="description">efqerqr</p>
+            </div>
+            <div class="weatherDetails">
+                <div class="humidity">
+                    <i class="fa-solid fa-water"><span> Humidity</span></i>
+                    <p id="humidity">1234</p>
+                </div>
+                <div class="wind">
+                    <i class="fa-solid fa-wind"><span> Wind</span></i>
+                    <p id="wind">1 atm</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/b2bcb592d9.js" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
